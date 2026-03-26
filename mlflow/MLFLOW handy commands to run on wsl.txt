@@ -1,0 +1,37 @@
+MLFLOW handy commands to run on wsl
+pull repo
+cd mlflow
+nano ~/.docker/config.json
+
+bash k8s/deploy.sh
+
+5:30 PM fixing docker file and requirement to run deploy.sh
+6 PM
+
+update requirements.txt
+update docker file 
+bash k8s/tunnel.sh
+
+able to upload and predict
+issue - model not able to find tumor image
+
+fixing dependency issue as python3.12 not compatible with panda it need 3.11 and preinstall wheel
+
+sudo apt update
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+
+sudo apt install python3.11 python3.11-venv python3.11-dev -y
+python3.11 --version
+
+rm -rf venv
+python3.11 -m venv venv
+source venv/bin/activate
+python --version
+python3 -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+
+
+kubectl get pods -n cnn-classifier
+pip install dvc
